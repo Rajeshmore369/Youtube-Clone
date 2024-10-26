@@ -1,4 +1,5 @@
 import "./App.css";
+import Feed from "./components/Feed";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 
@@ -8,7 +9,7 @@ function App() {
       <Navbar />
       <div className="flex mt-16">
         <Sidebar />
-        video
+        <Feed />
       </div>
     </div>
   );

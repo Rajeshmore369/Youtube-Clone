@@ -4,13 +4,23 @@ import { CiSearch } from "react-icons/ci";
 import { MdOutlineVideoCall } from "react-icons/md";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import Avatar from "react-avatar";
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "../utils/AppSlice";
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const toggleHandler = () => {
+    dispatch(toggleSidebar());
+  };
   return (
-    <div className="flex justify-between fixed w-[100%] items-center top-0 bg-white">
-      <div className="flex  w-[96%] justify-between py-3 px-2 pt-2">
+    <div className="flex justify-between fixed w-[100%] items-center top-0 mb-2 bg-white">
+      <div className="flex  w-[96%] justify-between py-3 ml-8 pt-2">
         {/*hamburger menu*/}
         <div className="flex items-center ">
-          <GiHamburgerMenu size={"24px"} />
+          <GiHamburgerMenu
+            onClick={toggleHandler}
+            size={"24px"}
+            className="cursor-pointer"
+          />
           <img
             className="px-4"
             width={"115px"}
